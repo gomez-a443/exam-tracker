@@ -1,4 +1,4 @@
-import { Button, Label, TextInput } from "flowbite-react";
+import { Button, Dropdown, Label, TextInput } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,17 +8,15 @@ export default function Login() {
       <div className=" flex flex-col items-center">
         <form className="flex flex-col gap-4 max-w-max">
           <div className="">
-            <Label value="Your email" />
-            <TextInput type="email" placeholder="name@company.com" id="email" />
-          </div>
-          <div className="">
-            <Label value="Stream" />
-            <TextInput type="text" placeholder="bca/bsc" id="stream" />
+            <TextInput type="text" placeholder="Your name" id="name" />
           </div>
           <div>
-            <Label value="Your password" />
-            <TextInput type="password" placeholder="**********" id="password" />
+            <TextInput type="email" placeholder="Your email" id="email" />
           </div>
+          <div className="">
+            <TextInput type="text" placeholder="Your stream" id="stream" />
+          </div>
+
           <Button gradientDuoTone="purpleToPink" type="submit">
             Login
           </Button>
