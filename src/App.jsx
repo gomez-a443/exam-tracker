@@ -11,6 +11,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Login />} />
+
         <Route path="/sections" element={<SectionRoute />}>
           <Route index element={<Question_List />} />
         </Route>

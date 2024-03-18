@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { SectionContext } from "../store/section_context";
 import Button from "../components/Button";
 import ButtonDemo from "../components/Button";
+import { UserContext } from "../store/user_context";
 
 export default function Login() {
   const navigate = useNavigate();
+  const context = useContext(UserContext);
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -16,6 +18,7 @@ export default function Login() {
       stream: e.target.stream.value,
     };
     navigate("/sections");
+    context.sendUserInfo(login);
     localStorage.setItem("Login", JSON.stringify(login));
   }
 

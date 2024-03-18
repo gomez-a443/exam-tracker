@@ -7,6 +7,7 @@ export const SectionContext = createContext({
 
 export function SectionContextProvider(props) {
   const [questions, setQuestions] = useState([]);
+
   async function getQuestions() {
     const options = {
       method: "GET",
@@ -15,8 +16,8 @@ export function SectionContextProvider(props) {
     const res = await fetch("http://localhost:3000/sections", options);
     const temp = await res.json();
     setQuestions(temp);
-    console.log(questions);
   }
+
   const data = {
     questions: questions,
     getQuestions: getQuestions,
