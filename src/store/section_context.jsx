@@ -1,30 +1,33 @@
 import { createContext, useEffect, useState } from "react";
 
 export const SectionContext = createContext({
-  questions: {},
-  getQuestions: () => {},
+  sections: {},
+  getSections: () => {},
 });
 
 export function SectionContextProvider(props) {
-  const [questions, setQuestions] = useState([]);
+  const [sections, setSections] = useState([]);
 
-  async function getQuestions() {
+  async function getSections() {
     const options = {
       method: "GET",
     };
 
-    const res = await fetch("http://localhost:3000/sections", options);
+    const res = await fetch(
+      "https://evaluationsystem-5m8l.onrender.com/api/v1/sections",
+      options
+    );
     const temp = await res.json();
-    setQuestions(temp);
+    setSections(temp);
   }
 
   const data = {
-    questions: questions,
-    getQuestions: getQuestions,
+    sections: sections,
+    getSections: getSections,
   };
 
   useEffect(() => {
-    getQuestions();
+    getSections();
   }, []);
 
   return (

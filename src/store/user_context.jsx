@@ -21,7 +21,6 @@ export function UserContextProvider(props) {
     );
     const temp = await res.text();
     setUser(temp);
-    console.log(user);
   }
 
   const userData = {

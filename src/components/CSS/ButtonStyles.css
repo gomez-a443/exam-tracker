@@ -1,0 +1,9 @@
+.purpleToPink {
+  background-image: linear-gradient(to right, #7f5af0 0%, #fc5c77 100%);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.gray {
+  background-color: #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
