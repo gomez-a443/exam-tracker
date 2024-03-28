@@ -15,7 +15,7 @@ export default function Component() {
   function onCloseModal() {
     setOpenModal(false);
   }
-  const length = context.questions.length;
+  const length = context.sections.length;
 
   return (
     <>

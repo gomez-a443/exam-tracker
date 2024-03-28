@@ -19,7 +19,7 @@ export default function Login() {
     };
     navigate("/sections");
     context.sendUserInfo(login);
-    localStorage.setItem("Login", JSON.stringify(login));
+    sessionStorage.setItem("Login", JSON.stringify(login));
   }
 
   return (
